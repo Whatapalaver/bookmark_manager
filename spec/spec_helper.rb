@@ -1,6 +1,6 @@
 require_relative './setup_test_database'
 
-ENV['RACK_ENV'] = 'test'
+# ENV['RACK_ENV'] = 'test'
 ENV['ENVIRONMENT'] = 'test'
 
 # Bring in the contents of the `app.rb` file
