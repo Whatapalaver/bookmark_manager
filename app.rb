@@ -13,7 +13,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/bookmarks' do
-    @bookmarks = Bookmark.all
+    @bookmarks = Bookmark.all 
     erb :index
   end
 
@@ -22,7 +22,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   post '/bookmarks' do
-    bookmark = Bookmark.create(url: params['url'])
+    bookmark = Bookmark.create(url: params['url'], title: params['title'])
     flash[:notice] = 'You must submit a valid URL.' unless bookmark
     redirect '/bookmarks'
   end
