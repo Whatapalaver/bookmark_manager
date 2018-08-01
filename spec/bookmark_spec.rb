@@ -4,9 +4,9 @@ describe Bookmark do
   describe '.all' do
     it 'returns all bookmarks in an array' do
       # Add the test data
-      Bookmark.create(url: "http://makersacademy.com")
-      Bookmark.create(url: "http://destroyallsoftware.com")
-      Bookmark.create(url: "http://google.com")
+      Bookmark.create(url: 'http://makersacademy.com')
+      Bookmark.create(url: 'http://destroyallsoftware.com')
+      Bookmark.create(url: 'http://google.com')
 
       expected_bookmarks = [
         'http://makersacademy.com',
