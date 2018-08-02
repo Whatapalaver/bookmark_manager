@@ -7,8 +7,9 @@ feature 'Adding bookmarks' do
   scenario 'User can add new bookmarks' do
     visit('/bookmarks/new')
     fill_in('url', with: 'http://testbookmark.com')
+    fill_in('title', with: 'testing')
     click_button('Submit')
-    expect(page).to have_content 'http://testbookmark.com'
+    expect(page).to have_content 'testing'
   end
 
   scenario 'Bookmark must be a valid URL' do
