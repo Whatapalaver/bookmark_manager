@@ -1,9 +1,9 @@
 feature 'Deleting a bookmark' do 
   scenario 'A user can delete a bookmark' do
-    Bookmark.create(yrl: 'http://makersacademy.com', title: 'Makers Academy')
+    testbookmark = Bookmark.create(url: 'http://makersacademy.com', title: 'Makers Academy')
     visit('/bookmarks')
 
-    within '#bookmark-1' do
+    within "#bookmark-#{testbookmark.id}" do
       click_button 'Delete'
     end
 
