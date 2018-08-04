@@ -1,7 +1,15 @@
-<form action='/bookmarks' method='post'>
-  <input type="text" name="url" />
-  <input type="text" name="title"/>
-  <input type="submit" value="Submit"/>
- 
-  
-</form>
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <%= styled_flash %>
+    <form action='/bookmarks' method='post'>
+      <input type="text" name="url" />
+      <input type="text" name="title"/>
+      <input type="submit" value="Submit"/>
+    </form>
+  </body>
+</html>
+

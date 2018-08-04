@@ -1,18 +1,27 @@
-<%= flash[:notice] %>
-<ul>
-  <% @bookmarks.each do |bookmark| %>
-    <li id="bookmark-<%= bookmark.id %>">
-    <a href="<%= bookmark.url %>" target="_blank">
-    <%= bookmark.title %>
-    </a>
-    <form action="/bookmarks/<%= bookmark.id %>/delete" method="post">
-+     <input type='hidden' name='_method' value='DELETE'/>
-      <input type='hidden' name='id' value="<%= bookmark.id %>"/>
-      <input type="submit" value="Delete" />
-+   </form>
-    </li>
-  <% end %>
-  <form action='/bookmarks/new'>
-    <input type="submit" value="Add" />
-  </form>
-</ul>
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <%= styled_flash %>
+    <ul>
+      <% @bookmarks.each do |bookmark| %>
+        <li id="bookmark-<%= bookmark.id %>">
+        <a href="<%= bookmark.url %>" target="_blank">
+        <%= bookmark.title %>
+        </a>
+        <form action="/bookmarks/<%= bookmark.id %>/delete" method="post">
+    +     <input type='hidden' name='_method' value='DELETE'/>
+          <input type='hidden' name='id' value="<%= bookmark.id %>"/>
+          <input type="submit" value="Delete" />
+    +   </form>
+        </li>
+      <% end %>
+      <form action='/bookmarks/new'>
+        <input type="submit" value="Add" />
+      </form>
+    </ul>
+  </body>
+</html>
+
